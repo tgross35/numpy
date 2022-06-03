@@ -3,9 +3,13 @@ if [[ -n "${PRE_COMMIT_TO_REF}" ]]; then
     parsed_to_ref=$(git rev-parse $PRE_COMMIT_TO_REF)
     head_ref=$(git rev-parse HEAD)
 
+    echo WE ARE HERE 1
+
     # If we are comparing to not comparing to HEAD, changes cannot be safely
     # applied, all we can do is print the diff and exit
     if [[ $PRE_COMMIT_TO_REF != $head_ref ]]; then
+        echo WE ARE HERE 2
+        echo git-clang-format $PRE_COMMIT_FROM_REF $PRE_COMMIT_TO_REF --diff $@
         output=$(git-clang-format $PRE_COMMIT_FROM_REF $PRE_COMMIT_TO_REF --diff $@)
         exitcode=$?
 
@@ -27,4 +31,5 @@ if [[ -n "${PRE_COMMIT_TO_REF}" ]]; then
 fi
 
 # Otherwise, our current ref is active and the tool can edit it
+echo WE ARE HERE 3
 git-clang-format $PRE_COMMIT_FROM_REF $@

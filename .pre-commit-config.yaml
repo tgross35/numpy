@@ -38,6 +38,7 @@ repos:
         language: python
         args: ["--style", "file"]
         types_or: [c++, c]
+        verbose: true
         additional_dependencies:
           - clang-format==14.0.3
 

@@ -13,7 +13,7 @@ As of NumPy 1.23, only the classic Intel compilers (``ifort``) are supported.
 	However this document does not endorse the usage of Intel in downstream
 	projects due to the issues pertaining to `disassembly of components and
 	liability`_.
-	
+
 	Neither the Python Intel installation nor the `Classic Intel C/C++
 	Compiler` are required.
 

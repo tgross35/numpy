@@ -6,7 +6,7 @@ F2PY and Windows
 
 .. warning::
 
-	F2PY support for Windows is not at par with Linux support, and 
+	F2PY support for Windows is not at par with Linux support, and
 	OS specific flags can be seen via ``python -m numpy.f2py``
 
 Broadly speaking, there are two issues working with F2PY on Windows:
@@ -15,7 +15,7 @@ Broadly speaking, there are two issues working with F2PY on Windows:
 - the linking issues related to the C runtime library for building Python-C extensions.
 
 The focus of this section is to establish a guideline for developing and
-extending Fortran modules for Python natively, via F2PY on Windows. 
+extending Fortran modules for Python natively, via F2PY on Windows.
 
 Overview
 ========
@@ -74,7 +74,7 @@ Classic Flang (FOSS)
    The backbone of the PGI compilers were cannibalized to form the "classic" or
    `legacy version of Flang`_. This may be compiled from source and used
    natively. `LLVM Flang`_ does not support Windows yet (30-01-2022).
-   
+
 LFortran (FOSS)
    One of two LLVM based compilers. Not all of F2PY supported Fortran can be
    compiled yet (30-01-2022) but uses MSVC for native linking.
@@ -98,7 +98,7 @@ matrix as follows:
 
 .. _table-f2py-winsup-mat:
 
-.. table:: Support matrix, exe implies a Windows installer 
+.. table:: Support matrix, exe implies a Windows installer
 
   +----------------------+--------------------+-------------------+
   | **Fortran Compiler** | **C/C++ Compiler** | **Source**        |
@@ -117,7 +117,7 @@ matrix as follows:
 For an understanding of the key issues motivating the need for such a matrix
 `Pauli Virtanen's in-depth post on wheels with Fortran for Windows`_ is an
 excellent resource. An entertaining explanation of an application binary
-interface (ABI) can be found in this post by `JeanHeyd Meneide`_. 
+interface (ABI) can be found in this post by `JeanHeyd Meneide`_.
 
 Powershell and MSVC
 ====================
@@ -127,14 +127,14 @@ MSVC is installed either via the Visual Studio Bundle or the lighter (preferred)
 setting.
 
 .. note::
-   
+
   This can take a significant amount of time as it includes a download of around
   2GB and requires a restart.
 
 It is possible to use the resulting environment from a `standard command
 prompt`_. However, it is more pleasant to use a `developer powershell`_,
 with a `profile in Windows Terminal`_. This can be achieved by adding the
-following block to the ``profiles->list`` section of the JSON file used to 
+following block to the ``profiles->list`` section of the JSON file used to
 configure Windows Terminal (see ``Settings->Open JSON file``):
 
 .. code-block:: json
@@ -151,7 +151,7 @@ Now, testing the compiler toolchain could look like:
 
    # New Windows Developer Powershell instance / tab
    # or
-   $vsPath = (Join-Path ${env:ProgramFiles(x86)} -ChildPath 'Microsoft Visual Studio\\2019\\BuildTools'); 
+   $vsPath = (Join-Path ${env:ProgramFiles(x86)} -ChildPath 'Microsoft Visual Studio\\2019\\BuildTools');
    Import-Module (Join-Path $vsPath 'Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll');
    Enter-VsDevShell -VsInstallPath $vsPath -SkipAutomaticLocation
    **********************************************************************

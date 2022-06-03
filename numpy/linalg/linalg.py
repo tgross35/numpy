@@ -957,7 +957,7 @@ def qr(a, mode='reduced'):
         return wrap(a)
 
     # mc is the number of columns in the resulting q
-    # matrix. If the mode is complete then it is 
+    # matrix. If the mode is complete then it is
     # same as number of rows, and if the mode is reduced,
     # then it is the minimum of number of rows and columns.
     if mode == 'complete' and m > n:

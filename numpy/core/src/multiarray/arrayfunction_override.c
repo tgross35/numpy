@@ -63,7 +63,7 @@ pyobject_array_insert(PyObject **array, int length, int index, PyObject *item)
  * Collects arguments with __array_function__ and their corresponding methods
  * in the order in which they should be tried (i.e., skipping redundant types).
  * `relevant_args` is expected to have been produced by PySequence_Fast.
- * Returns the number of arguments, or -1 on failure. 
+ * Returns the number of arguments, or -1 on failure.
  */
 static int
 get_implementing_args_and_methods(PyObject *relevant_args,
